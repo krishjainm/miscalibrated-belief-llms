@@ -32,12 +32,4 @@ This research demonstrates:
 2. **Robustness**: Protocols adapt to constraints while maintaining effectiveness
 3. **Strategic Intelligence**: Natural language enables complex multi-agent coordination
 
-## 🎯 Publication Ready
-
-The research is ready for WMAC 2026 publication with:
-- Comprehensive experimental design
-- Robust analysis methodology
-- Significant empirical findings
-- Clear research contributions
-
-**Status**: ✅ Complete and ready for publication
+This project was created and developed by Krish Jain & Harry llanyan
