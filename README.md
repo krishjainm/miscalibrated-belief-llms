@@ -4,7 +4,7 @@ A reproducible, instrumented Fixed-Limit Texas Hold'em environment built on [Pok
 
 ## Research Overview
 
-This codebase supports research into **whether LLMs actually maintain coherent Bayesian beliefs** about hidden information. The core research question:
+This codebase supports research into **Whether LLMs actually maintain coherent Bayesian beliefs** about hidden information. The core research question:
 
 *Do LLM poker agents internally maintain coherent probability distributions over opponent hands or do they rely on surface-level heuristics while producing plausible-sounding but inconsistent belief statements?*
 
@@ -971,6 +971,19 @@ pytest poker_env/tests/ -v
 
 # Just analysis
 pytest analysis/tests/ -v
+```
+
+## Citation
+
+If you use this infrastructure in your research, please cite:
+
+```bibtex
+@misc{deception_circuits_2025,
+  title={Whether LLMs actually maintain coherent Bayesian beliefs},
+  author={Krish Jain, Harry Ilanyan},
+  year={2026},
+  url={(https://github.com/krishjainm/miscalibrated-belief-llms/)}
+}
 ```
 
 ## License
