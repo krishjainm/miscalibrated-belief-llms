@@ -1,0 +1,12 @@
+# Poker Environment for LLM Belief Modeling Research
+# Requires Python >= 3.11
+
+# Core dependency - poker game engine
+pokerkit>=0.6.0
+
+# Analysis dependencies
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Testing
+pytest>=7.0.0
