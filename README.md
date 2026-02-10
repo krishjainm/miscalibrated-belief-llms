@@ -6,7 +6,7 @@ A reproducible, instrumented Fixed-Limit Texas Hold'em environment built on [Pok
 
 This codebase supports research into **whether LLMs actually maintain coherent Bayesian beliefs** about hidden information. The core research question:
 
-> *Do LLM poker agents internally maintain coherent probability distributions over opponent hands or do they rely on surface-level heuristics while producing plausible-sounding but inconsistent belief statements?*
+*Do LLM poker agents internally maintain coherent probability distributions over opponent hands or do they rely on surface-level heuristics while producing plausible-sounding but inconsistent belief statements?*
 
 ### Important: Two Different "Oracles"
 
