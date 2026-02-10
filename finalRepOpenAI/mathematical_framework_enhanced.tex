@@ -1,0 +1,161 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\title{WMAC 2026: Emergent Communication Protocols in Multi-Agent Strategic Games}
+\author{Harutyun Harry Ilanyan}
+\date{October 2025}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+
+\begin{document}
+
+\maketitle
+
+\section{Formal Framework}
+
+We consider a partially observable multi-agent environment represented as a tuple 
+\[
+\mathcal{G} = (\mathcal{S}, \mathcal{A}_1, \ldots, \mathcal{A}_N, \mathcal{M}, T, R_1, \ldots, R_N, \Omega),
+\]
+where:
+\begin{itemize}
+    \item $\mathcal{S}$ is the global state space.
+    \item Each agent $i \in \{1,\ldots,N\}$ observes a private state $s_i \in \mathcal{S}_i$ (e.g., private cards in poker).
+    \item Each agent has an action space $\mathcal{A}_i$ and a message space $\mathcal{M}_i \subseteq \mathcal{M}$.
+    \item $T$ is a stochastic transition kernel over states given actions.
+    \item $R_i(s, a_1, \ldots, a_N)$ is the reward (or payoff) for agent $i$.
+    \item $\Omega$ represents external constraints (e.g., banned phrases, lexical limitations).
+\end{itemize}
+
+At each timestep $t$, agent $i$ samples a message $m_i^t \sim \pi_i^m(\cdot \mid h_i^t, \Omega)$ and an action 
+$a_i^t \sim \pi_i^a(\cdot \mid h_i^t, m_{-i}^t)$,
+where $h_i^t$ denotes its local history, including observations, previous actions, and messages.  
+The vector $m_{-i}^t$ represents the messages received from all other agents at time $t$.
+
+\subsection{Communication Channel}
+The communication mechanism defines a (possibly learned) mapping
+\[
+C: (s_1, \ldots, s_N, \Omega) \mapsto (m_1, \ldots, m_N)
+\]
+that induces a joint distribution $p(m, s, a \mid \Omega)$ over messages, states, and actions under the agents' policies $\pi = (\pi_1, \ldots, \pi_N)$.
+Initially, $\mathcal{M}$ has no prescribed semantics: any structure in $p(m, s, a \mid \Omega)$ must emerge through optimization dynamics.
+
+\section{Emergent Communication}
+
+\begin{definition}[Emergent Communication Protocol]
+A communication protocol $\pi^{comm} = \{\pi_i^m, \pi_i^a\}_{i=1}^N$ is said to exhibit 
+\textbf{emergent communication} if it satisfies the following conditions for at least one pair of agents $(i,j)$:
+
+\begin{enumerate}
+    \item \textbf{Informational Dependence:}
+    \[
+    I(m_j; s_j) > \epsilon_1
+    \quad \text{and/or} \quad
+    I(m_j; s_{-j}) > \epsilon_1
+    \]
+    where $\epsilon_1 > 0$ is a significance threshold, and the emitted message carries mutual information about an agent's hidden or local state.
+
+    \item \textbf{Behavioral Influence:}
+    \[
+    I(m_j; a_i \mid s_i) > \epsilon_2
+    \]
+    where $\epsilon_2 > 0$, i.e., another agent's action is conditionally dependent on the message, given its own observation.
+
+    \item \textbf{Utility Improvement:}
+    \[
+    \mathbb{E}_{\pi^{comm}}[R_i] - \mathbb{E}_{\pi^{no\text{-}comm}}[R_i] > \epsilon_3
+    \]
+    where $\epsilon_3 > 0$, i.e., the introduction of the communication channel strictly improves expected utility relative to a no-communication baseline.
+
+    \item \textbf{Protocol Stability:}
+    \[
+    \text{Var}_{\pi^{comm}}[I(m_j; s_j)] < \delta
+    \]
+    where $\delta > 0$ is a stability threshold, ensuring the protocol maintains consistent informational content over time.
+\end{enumerate}
+
+If all four criteria hold jointly, the system demonstrates \emph{non-trivial, beneficial, interpretable, and stable} emergent communication.
+\end{definition}
+
+\subsection{Protocol Adaptation Under Constraints}
+
+\begin{definition}[Constraint-Resilient Emergence]
+A protocol $\pi^{comm}$ exhibits \textbf{constraint-resilient emergence} if, when subjected to external constraints $\Omega' \subset \Omega$, it maintains emergent properties through adaptation:
+
+\[
+\exists \pi^{comm'} : \mathbb{E}_{\pi^{comm'}}[I(m_j; s_j \mid \Omega')] \geq (1-\alpha) \mathbb{E}_{\pi^{comm}}[I(m_j; s_j \mid \Omega)]
+\]
+
+where $\alpha \in [0,1]$ represents the maximum acceptable information loss under constraints.
+\end{definition}
+
+\subsection{Protocol Complexity and Sophistication}
+
+\begin{definition}[Protocol Sophistication]
+The \textbf{sophistication} of an emergent protocol is measured by:
+
+\[
+\Sigma(\pi^{comm}) = H(m \mid s) + \lambda \cdot \mathbb{E}[I(m; a \mid s)]
+\]
+
+where $H(m \mid s)$ captures the entropy of messages given states (protocol richness), and $\lambda$ weights the behavioral influence term.
+\end{definition}
+
+\section{Empirical Validation Framework}
+
+\subsection{Statistical Tests for Emergence}
+
+\begin{proposition}[Empirical Emergence Detection]
+Given empirical data $\mathcal{D} = \{(m^t, s^t, a^t)\}_{t=1}^T$ from $K$ independent simulations, we can test for emergent communication using:
+
+\begin{enumerate}
+    \item \textbf{Mutual Information Test:}
+    \[
+    \hat{I}(m_j; s_j) = \frac{1}{K} \sum_{k=1}^K \hat{I}_k(m_j; s_j) \pm z_{\alpha/2} \cdot \text{SE}(\hat{I})
+    \]
+    where $\hat{I}_k$ is the empirical mutual information estimate for simulation $k$.
+
+    \item \textbf{Conditional Independence Test:}
+    \[
+    \chi^2 = \sum_{m,a,s} \frac{(\hat{p}(m,a,s) - \hat{p}(m,s)\hat{p}(a|s))^2}{\hat{p}(m,s)\hat{p}(a|s)}
+    \]
+    Tests the null hypothesis $H_0: p(m,a|s) = p(m|s)p(a|s)$.
+
+    \item \textbf{Utility Difference Test:}
+    \[
+    t = \frac{\bar{R}^{comm} - \bar{R}^{no\text{-}comm}}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}
+    \]
+    where $\bar{R}^{comm}$ and $\bar{R}^{no\text{-}comm}$ are sample means of rewards.
+\end{enumerate}
+\end{proposition}
+
+\subsection{Protocol Evolution Metrics}
+
+\begin{definition}[Protocol Convergence Rate]
+The \textbf{convergence rate} of emergent protocols is measured by:
+
+\[
+\rho(t) = \frac{1}{K} \sum_{k=1}^K \frac{|\hat{I}_k^t(m; s) - \hat{I}_k^{t-1}(m; s)|}{\hat{I}_k^{t-1}(m; s)}
+\]
+
+Protocol convergence occurs when $\rho(t) < \epsilon$ for $t > T_{conv}$.
+\end{definition}
+
+\subsection{Adaptation Robustness Measures}
+
+\begin{definition}[Adaptation Efficiency]
+The \textbf{adaptation efficiency} under constraint $\Omega'$ is:
+
+\[
+\eta(\Omega') = \frac{\mathbb{E}[I(m'; s' \mid \Omega')]}{\mathbb{E}[I(m; s \mid \Omega)]} \cdot \frac{1}{T_{adapt}}
+\]
+
+where $T_{adapt}$ is the time to reach stable performance under constraints.
+\end{definition}
+
+\end{document}

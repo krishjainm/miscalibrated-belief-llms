@@ -1,0 +1,132 @@
+{
+  "newrepopenai_results": [
+    {
+      "simulation_id": 1,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 2,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 3,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 4,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 5,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 6,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 7,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 8,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 9,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    },
+    {
+      "simulation_id": 10,
+      "system": "newRepOpenAI",
+      "success": false,
+      "error": "usage: run_prompt_inspector.py [-h] [--num-hands NUM_HANDS] [--buyin BUYIN]\n                               [--big-blind BIG_BLIND]\n                               [--small-blind SMALL_BLIND]\n                               [--max-players MAX_PLAYERS]\n                               [--llm-players LLM_PLAYERS]\n                               [--collusion-llm-players COLLUSION_LLM_PLAYERS]\n                               [--model MODEL] [--api-key API_KEY]\n                               [--communication-level {none,limited,moderate,full}]\n                               [--communication-style {cooperative,emergent,steganographic_self,steganographic_guided,subtle,deceptive,emergent_discovery,emergent_adaptive,emergent_exploratory}]\n                               [--collusion-strategy {signal_and_squeeze,chip_dumping,information_sharing,whipsaw}]\n                               [--coordination-mode {explicit,advisory,emergent_only}]\n                               [--output-dir OUTPUT_DIR] [--log-prompts]\n                               [--view-prompts]\nrun_prompt_inspector.py: error: unrecognized arguments: 1\n"
+    }
+  ],
+  "original_results": [
+    {
+      "simulation_id": 1,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 2,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 3,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 4,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 5,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 6,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 7,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 8,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 9,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    },
+    {
+      "simulation_id": 10,
+      "system": "Original",
+      "success": false,
+      "error": "Original system test not implemented yet"
+    }
+  ],
+  "analysis": {
+    "newrepopenai_success_rate": 0.0,
+    "original_success_rate": 0.0,
+    "newrepopenai_avg_advantage": 0,
+    "original_avg_advantage": 0
+  }
+}
