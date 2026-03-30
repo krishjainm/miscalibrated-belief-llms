@@ -78,6 +78,9 @@ def get_agent_configs(agents: list[BaseAgent]) -> list[dict]:
         }
         if hasattr(agent, "seed"):
             config["seed"] = agent.seed
+        if hasattr(agent, "preset_name"):
+            config["preset_name"] = agent.preset_name
+            config["belief_mode"] = getattr(agent, "belief_mode", None)
         configs.append(config)
     return configs
 
@@ -123,6 +126,13 @@ def run_single_hand(
         action = agent.act(obs)
         belief = agent.belief(obs)
 
+        llm_extra = None
+        if hasattr(agent, "last_action_meta") and hasattr(agent, "last_belief_meta"):
+            llm_extra = {
+                "belief": getattr(agent, "last_belief_meta", {}),
+                "action": getattr(agent, "last_action_meta", {}),
+            }
+
         # Oracle computed AFTER agent acts - for logging only, never seen by agent
         equity_truth = None
         if compute_oracle:
@@ -151,6 +161,7 @@ def run_single_hand(
                 agent_action=action,
                 agent_belief=belief,
                 equity_given_true_hands=equity_truth,
+                llm_extra=llm_extra,
             )
 
         # Apply action
@@ -186,6 +197,8 @@ def run_experiment(
     big_bet: int = 4,
     compute_oracle: bool = True,
     verbose: bool = False,
+    agents: Optional[list[BaseAgent]] = None,
+    prompt_version: Optional[str] = None,
 ) -> dict:
     """
     Run a full experiment with multiple hands.
@@ -202,6 +215,9 @@ def run_experiment(
         big_bet: Big bet size
         compute_oracle: Whether to compute oracle truth
         verbose: Print progress
+        agents: If provided, use these agents (length must equal num_players);
+            otherwise build from agent_types via create_agents.
+        prompt_version: Optional label for belief/action prompt versioning (logged in run_config).
 
     Returns:
         Dict with experiment summary
@@ -221,7 +237,10 @@ def run_experiment(
         )
 
     # Create agents
-    agents = create_agents(agent_types, num_players, base_seed)
+    if agents is None:
+        agents = create_agents(agent_types, num_players, base_seed)
+    elif len(agents) != num_players:
+        raise ValueError(f"agents length {len(agents)} != num_players {num_players}")
 
     # Create oracle
     oracle = EquityOracle(num_samples=5000, seed=base_seed + 100)
@@ -235,6 +254,7 @@ def run_experiment(
         output_path,
         env_config_hash=env.get_config_hash(),
         agent_configs=get_agent_configs(agents),
+        prompt_version=prompt_version,
     ) as logger:
         for i in range(num_hands):
             hand_seed = base_seed + i * 1000

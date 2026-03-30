@@ -104,6 +104,29 @@ python run_experiment.py --num-players 6 --agent random --hands 100 --no-oracle 
 python -m analysis.build_dataset logs/experiment.jsonl logs/enriched.jsonl --opponent default
 ```
 
+### LLM experiments (API models), CoT, and logged interpretability
+
+For heads-up runs with an API LLM on one seat (and `random` / `call` baselines on others), use:
+
+```bash
+pip install -r requirements.txt -r requirements-llm.txt
+# Set the API key for your preset (see llm/model_registry.py), e.g. OPENAI_API_KEY
+
+python run_llm_experiment.py --preset gpt-4o-mini --belief-mode direct --action-mode direct --hands 20 -v --out logs/llm_run.jsonl
+```
+
+On **Windows PowerShell**, keep the command on **one line** (or use backtick `` ` `` for continuation). Do not use `^`—that is **cmd.exe** only.
+
+- Preset families include OpenAI, Anthropic, Google Gemini, Mistral (OpenAI-compatible), Qwen via Together, and Qwen via Alibaba DashScope (see `llm/model_registry.py`).
+- Keys are provider-specific: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GOOGLE_API_KEY`, `MISTRAL_API_KEY`, `TOGETHER_API_KEY`, `DASHSCOPE_API_KEY` (optional `DASHSCOPE_BASE_URL` override for DashScope).
+- **Chain-of-thought:** `--belief-mode cot` and/or `--action-mode cot`.
+- **Output-token logprobs:** `--top-logprobs 5` (stored under `llm_extra` in JSONL). OpenAI-compatible providers populate directly; Gemini uses `google-genai` mapping when available; Anthropic logs an explanatory `logprobs_note` since token logprobs are not exposed.
+- **Local logit lens + attention diagnostics:** install PyTorch for your machine, then `pip install -r requirements-local.txt`, and pass `--local-interp-model <hf_model_id> --interp-max-calls N` (see `docs/llm_extra_json_schema.md`).
+- **Exact JSON schema for `llm_extra` (paper appendix):** [`docs/llm_extra_json_schema.md`](docs/llm_extra_json_schema.md).
+- **Compare direct vs CoT on enriched logs:** `python -m analysis.analyze_cot_variants logs/enriched.jsonl --oracle strategy_aware --divergence js`
+
+Implementation status: code and tests are complete; full per-preset live verification still depends on running with real provider keys in your environment.
+
 ## Command Line Reference
 
 ### All Flags Explained

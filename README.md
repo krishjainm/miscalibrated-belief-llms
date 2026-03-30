@@ -104,6 +104,33 @@ python run_experiment.py --num-players 6 --agent random --hands 100 --no-oracle 
 python -m analysis.build_dataset logs/experiment.jsonl logs/enriched.jsonl --opponent default
 ```
 
+### LLM experiments and logging (`llm_extra`)
+
+The implementation under `poker2026-main/` includes **`run_llm_experiment.py`** (API LLMs + optional local interpretability) with separate **belief/action** calls and optional **CoT** for each.
+
+Supported preset families in `llm/model_registry.py`:
+
+- **OpenAI** (`OPENAI_API_KEY`)
+- **Anthropic Claude** (`ANTHROPIC_API_KEY`)
+- **Google Gemini** (`GOOGLE_API_KEY`)
+- **Mistral** via OpenAI-compatible API (`MISTRAL_API_KEY`)
+- **Qwen via Together** (`TOGETHER_API_KEY`)
+- **Qwen via Alibaba DashScope** (`DASHSCOPE_API_KEY`, optional `DASHSCOPE_BASE_URL`)
+
+`--top-logprobs K` behavior:
+
+- **OpenAI-compatible providers** (OpenAI/Mistral/Together/DashScope): `llm_extra.*.logprobs` populated when endpoint returns them.
+- **Google Gemini**: attempts logprobs via `google-genai` (`response_logprobs=True`) and maps output into the same per-token schema; if unavailable/failing, logs `logprobs_note`.
+- **Anthropic Claude**: Messages API does not expose output token logprobs; `logprobs` remains null and `logprobs_note` explains why.
+
+Current status:
+
+- **Code + tests:** complete and passing (`pytest`).
+- **Live provider verification:** requires running presets with your API keys in your environment (we did not run every preset with live keys here).
+
+- **Appendix-ready schema** for JSONL field `llm_extra`: [`poker2026-main/docs/llm_extra_json_schema.md`](poker2026-main/docs/llm_extra_json_schema.md)
+- **Local PyTorch / Transformers setup:** same document + `poker2026-main/requirements-local.txt`
+
 ## Command Line Reference
 
 ### All Flags Explained

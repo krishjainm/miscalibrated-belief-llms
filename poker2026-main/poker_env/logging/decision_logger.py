@@ -30,6 +30,7 @@ class DecisionRecord:
     agent_belief: Optional[dict]
     agent_action: str
     equity_given_true_hands: Optional[dict]  # Renamed from oracle_truth
+    llm_extra: Optional[dict] = None  # belief/action API metadata for LLM agents
 
     def to_dict(self) -> dict:
         """Convert to dictionary for JSON serialization."""
@@ -150,6 +151,7 @@ class DecisionLogger:
         agent_action: Action,
         agent_belief: Optional[dict] = None,
         equity_given_true_hands: Optional[dict] = None,
+        llm_extra: Optional[dict] = None,
     ) -> None:
         """
         Log a decision point.
@@ -160,6 +162,7 @@ class DecisionLogger:
             agent_action: Action selected by the agent
             agent_belief: Optional belief dict from agent
             equity_given_true_hands: Ground truth equity from oracle (computed AFTER agent acts)
+            llm_extra: Optional metadata (e.g. parse flags, preset) for LLM agents
         """
         record = DecisionRecord(
             hand_id=obs.hand_id,
@@ -173,6 +176,7 @@ class DecisionLogger:
             agent_belief=agent_belief,
             agent_action=agent_action.type.value,
             equity_given_true_hands=equity_given_true_hands,
+            llm_extra=llm_extra,
         )
 
         self._records.append(record)

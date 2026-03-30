@@ -1,0 +1,12 @@
+# Optional: API LLM experiments (run_llm_experiment.py) + closed models
+# pip install -r requirements.txt -r requirements-llm.txt
+
+openai>=1.30.0
+anthropic>=0.25.0
+google-generativeai>=0.7.0
+google-genai>=1.0.0
+
+# Local interpretability (logit lens + attention diagnostics): install PyTorch for your
+# platform, then:
+#   pip install -r requirements-local.txt
+# See docs/llm_extra_json_schema.md for exact JSON fields and setup steps.

@@ -1,0 +1,13 @@
+# Local interpretability: Hugging Face causal LMs (logit lens + attention diagnostics)
+# Install PyTorch FIRST for your platform (CPU vs CUDA). See docs/llm_extra_json_schema.md
+# and https://pytorch.org/get-started/locally/
+#
+# After torch works:
+#   pip install -r requirements-local.txt
+
+transformers>=4.40.0
+accelerate>=0.30.0
+safetensors>=0.4.0
+
+# Optional: gated models
+# huggingface_hub>=0.23.0
